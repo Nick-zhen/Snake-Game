@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/nickzheng/github/snakeGame'
+clang++ -Wall -Wextra -std=c++17 -g -Iinclude -Llib src/main.cpp -o bin/main 
+ 
+make: Leaving directory `/Users/nickzheng/github/snakeGame'
+ 
