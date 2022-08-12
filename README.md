@@ -23,4 +23,4 @@
   Install easy c++ project in vs code extension. 
   In the folder, click F1 => create a easy c++ project. Then you will some new files like Makefile  
  
-## Coding!
+## Lets' coding!
