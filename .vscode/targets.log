@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Sat Aug 13 18:56:35 2022
+# Make data base, printed on Sun Aug 14 22:42:25 2022
 
 # Variables
 
@@ -155,9 +155,9 @@ VSCODE_PID = 51519
 # Directories
 
 # . (device 16777223, inode 40518486): 10 files, no impossibilities.
-# src (device 16777223, inode 40533529): 6 files, no impossibilities.
+# src (device 16777223, inode 40533529): 7 files, no impossibilities.
 
-# 16 files, no impossibilities in 2 directories.
+# 17 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -177,7 +177,7 @@ all: bin/main
 # Not a target:
 src/StateMan.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-12 21:38:24
+#  Last modified 2022-08-14 22:17:40
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -201,7 +201,16 @@ Makefile:
 # Not a target:
 src/Game.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-13 18:51:58
+#  Last modified 2022-08-14 22:13:28
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/MainMenu.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-14 22:35:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -232,16 +241,16 @@ clean:
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-11 15:44:30
+#  Last modified 2022-08-13 19:51:01
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-bin/main: src/AssetMan.cpp src/Game.cpp src/StateMan.cpp src/main.cpp
+bin/main: src/AssetMan.cpp src/Game.cpp src/MainMenu.cpp src/StateMan.cpp src/main.cpp
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `'
-#  Last modified 2022-08-11 15:47:33
+#  Last modified 2022-08-14 22:18:02
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -251,15 +260,15 @@ bin/main: src/AssetMan.cpp src/Game.cpp src/StateMan.cpp src/main.cpp
 # automatic
 # * := 
 # automatic
-# + := src/AssetMan.cpp src/Game.cpp src/StateMan.cpp src/main.cpp
+# + := src/AssetMan.cpp src/Game.cpp src/MainMenu.cpp src/StateMan.cpp src/main.cpp
 # automatic
 # | := 
 # automatic
 # < := src/AssetMan.cpp
 # automatic
-# ^ := src/AssetMan.cpp src/Game.cpp src/StateMan.cpp src/main.cpp
+# ^ := src/AssetMan.cpp src/Game.cpp src/MainMenu.cpp src/StateMan.cpp src/main.cpp
 # automatic
-# ? := src/AssetMan.cpp src/Game.cpp src/StateMan.cpp
+# ? := src/MainMenu.cpp
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/17=12%
 #  commands to execute (from `Makefile', line 19):
@@ -269,14 +278,14 @@ bin/main: src/AssetMan.cpp src/Game.cpp src/StateMan.cpp src/main.cpp
 # Not a target:
 src/AssetMan.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-13 17:05:33
+#  Last modified 2022-08-13 19:39:38
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=11/1024=1%, Rehash=0, Collisions=0/32=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/34=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -288,6 +297,6 @@ src/AssetMan.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Aug 13 18:56:35 2022
+# Finished Make data base on Sun Aug 14 22:42:25 2022
 
  

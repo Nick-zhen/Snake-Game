@@ -25,6 +25,12 @@ void Game::Run() {
         while (timeSinceLastFrame > TIME_PER_FRAME) {
             timeSinceLastFrame -= TIME_PER_FRAME;
 
+            // Todo
+            // m_context->m_states->ProcessStateChange();
+            // m_context->m_states->GetCurrent()->ProcessInput();
+            // m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
+            // m_context->m_states->GetCurrent()->Draw();
+
             sf::Event event;
             while (m_context->m_window->pollEvent(event))
             {
