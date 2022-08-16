@@ -64,7 +64,8 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "utility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "list": "cpp"
     },
     "terminal.integrated.shell.windows": "cmd.exe",
     "C_Cpp.errorSquiggles": "Disabled"
