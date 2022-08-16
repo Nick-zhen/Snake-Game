@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/nickzheng/github/snakeGame'
-clang++ -Wall -Wextra -std=c++17 -g -Iinclude -Llib src/AssetMan.cpp src/Game.cpp src/MainMenu.cpp src/StateMan.cpp src/main.cpp -o bin/main -lsfml-graphics -lsfml-window -lsfml-system
+clang++ -Wall -Wextra -std=c++17 -g -Iinclude -Llib src/AssetMan.cpp src/Game.cpp src/GamePlay.cpp src/MainMenu.cpp src/StateMan.cpp src/main.cpp -o bin/main -lsfml-graphics -lsfml-window -lsfml-system
 make: Leaving directory `/Users/nickzheng/github/snakeGame'
  

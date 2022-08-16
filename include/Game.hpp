@@ -11,6 +11,10 @@
 enum AssetID
 {
     MAIN_FONT = 0,
+    GRASS,
+    FOOD,
+    WALL,
+    SNAKE
 };
 
 struct Context {
