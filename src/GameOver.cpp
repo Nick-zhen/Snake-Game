@@ -16,6 +16,11 @@ GameOver::~GameOver() {
 }
 
 void GameOver::Init() {
+    // set gameover music
+    if (!gameOver_music.openFromFile("assets/musics/GameOver.ogg")) {
+        std::cout << "Audio ERROR!" << std::endl;
+    }
+
     // title
     m_gameOverTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
     m_gameOverTitle.setString("Game Over!");
@@ -96,7 +101,7 @@ void GameOver::Update(sf::Time deltaTime) {
 
     if (m_isRetryButtonPressed) {
         // Go to the Play State
-        std::cout << "Game Over!" << std::endl;
+        std::cout << "Let's retry!" << std::endl;
         m_context->m_states->Add(std::make_unique<GamePlay>(m_context), true);
     } else if (m_isExitButtonPressed) {
         m_context->m_window->close();
@@ -109,4 +114,9 @@ void GameOver::Draw() {
     m_context->m_window->draw(m_retryButton);
     m_context->m_window->draw(m_exitButton);
     m_context->m_window->display();
+}
+
+void GameOver::Start() 
+{
+    gameOver_music.play();
 }

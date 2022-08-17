@@ -6,8 +6,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Mon Aug 15 23:42:01 2022
+# Make data base, printed on Wed Aug 17 00:08:12 2022
 
 # Variables
 
@@ -132,7 +133,7 @@ CXX := clang++
 # environment
 LC_ALL = C
 # makefile (from `Makefile', line 9)
-LIBRARIES := -lsfml-graphics -lsfml-window -lsfml-system
+LIBRARIES := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 # automatic
 ^F = $(notdir $^)
 # default
@@ -141,12 +142,13 @@ SUFFIXES :=
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
+ 
 # environment
 LANG = C
 # environment
 VSCODE_PID = 51519
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=3/103=3%
+# Load=67/1024=7%, Rehash=0, Collisions=2/96=2%
 
 # Pattern-specific Variable Values
 
@@ -155,9 +157,9 @@ VSCODE_PID = 51519
 # Directories
 
 # . (device 16777223, inode 40518486): 11 files, no impossibilities.
-# src (device 16777223, inode 40533529): 9 files, no impossibilities.
+# src (device 16777223, inode 40533529): 10 files, no impossibilities.
 
-# 20 files, no impossibilities in 2 directories.
+# 21 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -170,9 +172,9 @@ all: bin/main
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 src/StateMan.cpp:
@@ -186,7 +188,7 @@ src/StateMan.cpp:
 # Not a target:
 src/GamePlay.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 22:30:13
+#  Last modified 2022-08-17 00:06:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -201,7 +203,7 @@ src/GamePlay.cpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-11 15:47:15
+#  Last modified 2022-08-17 00:07:38
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -210,7 +212,16 @@ Makefile:
 # Not a target:
 src/Game.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 16:29:47
+#  Last modified 2022-08-16 01:11:37
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/GameOver.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 23:12:19
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -219,7 +230,7 @@ src/Game.cpp:
 # Not a target:
 src/MainMenu.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 22:01:26
+#  Last modified 2022-08-16 23:00:52
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -227,6 +238,7 @@ src/MainMenu.cpp:
 
 # Not a target:
 .DEFAULT:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -256,30 +268,13 @@ src/main.cpp:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-bin/main: src/AssetMan.cpp src/Game.cpp src/GamePlay.cpp src/MainMenu.cpp src/Snake.cpp src/StateMan.cpp src/main.cpp
+bin/main: src/AssetMan.cpp src/Game.cpp src/GameOver.cpp src/GamePlay.cpp src/MainMenu.cpp src/Snake.cpp src/StateMan.cpp src/main.cpp
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: `'
-#  Last modified 2022-08-15 22:30:20
+#  Last modified 2022-08-17 00:07:47
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := bin/main
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := src/AssetMan.cpp src/Game.cpp src/GamePlay.cpp src/MainMenu.cpp src/Snake.cpp src/StateMan.cpp src/main.cpp
-# automatic
-# | := 
-# automatic
-# < := src/AssetMan.cpp
-# automatic
-# ^ := src/AssetMan.cpp src/Game.cpp src/GamePlay.cpp src/MainMenu.cpp src/Snake.cpp src/StateMan.cpp src/main.cpp
-# automatic
-# ? := src/Snake.cpp
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 19):
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)
 	
@@ -287,7 +282,7 @@ bin/main: src/AssetMan.cpp src/Game.cpp src/GamePlay.cpp src/MainMenu.cpp src/Sn
 # Not a target:
 src/AssetMan.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-13 19:39:38
+#  Last modified 2022-08-17 00:02:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -296,14 +291,14 @@ src/AssetMan.cpp:
 # Not a target:
 src/Snake.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 23:41:42
+#  Last modified 2022-08-16 15:45:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/38=0%
+# Load=15/1024=1%, Rehash=0, Collisions=0/39=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -314,8 +309,7 @@ src/Snake.cpp:
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
- 
 
-# Finished Make data base on Mon Aug 15 23:42:01 2022
+# Finished Make data base on Wed Aug 17 00:08:12 2022
 
  

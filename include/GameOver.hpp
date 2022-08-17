@@ -3,6 +3,7 @@
 #include <memory>
 
 #include <SFML/Graphics/Text.hpp>
+#include <SFML/Audio.hpp>
 
 #include "State.hpp"
 #include "Game.hpp"
@@ -11,6 +12,9 @@ class GameOver : public Engine::State
 {
 private:
     std::shared_ptr<Context> m_context;
+
+    sf::Music gameOver_music;
+
     sf::Text m_gameOverTitle;
     sf::Text m_retryButton;
     sf::Text m_exitButton;
@@ -30,4 +34,5 @@ public:
     void ProcessInput() override;
     void Update(sf::Time deltaTime) override;
     void Draw() override;
+    void Start() override;
 };

@@ -4,6 +4,7 @@
 #include <array>
 
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Audio.hpp>
 
 #include "Game.hpp"
 #include "State.hpp"
@@ -13,6 +14,9 @@ class GamePlay : public Engine::State
 {
 private:
     std::shared_ptr<Context> m_context;
+    
+    sf::Music backgroud_music;
+
     sf::Sprite m_grass;
     sf::Sprite m_food;
     std::array<sf::Sprite, 4> m_walls;

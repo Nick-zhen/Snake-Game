@@ -5,6 +5,7 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include <iostream>
 
 GamePlay::GamePlay(std::shared_ptr<Context>& context) 
     : m_context(context), 
@@ -24,6 +25,13 @@ void GamePlay::Init()
     m_context->m_assets->AddTexture(FOOD, "assets/textures/food.png");
     m_context->m_assets->AddTexture(WALL, "assets/textures/wall.png", true);
     m_context->m_assets->AddTexture(SNAKE, "assets/textures/snake.png");
+    // m_context->m_assets->AddMusic(PlayGameMusic, "assets/musics/PalyGame.ogg");
+    // m_context->m_assets->AddMusic(GameOverMusic, "assets/musics/PalyGame.ogg");
+
+    // set backgroud music
+    if (!backgroud_music.openFromFile("assets/musics/PlayGame.ogg")) {
+        std::cout << "Audio ERROR!" << std::endl;
+    }
 
     // set grass textuere
     m_grass.setTexture(m_context->m_assets->GetTexture(GRASS));
@@ -92,6 +100,8 @@ void GamePlay::Update(sf::Time deltaTime)
         for (auto& wall: m_walls) {
             if (m_snake.isOn(wall)) {
                 // Go to Game over
+                backgroud_music.stop();
+
                 m_context->m_states->Add(std::make_unique<GameOver>(m_context), true);
                 break;
             }
@@ -132,5 +142,5 @@ void GamePlay::Pause()
 
 void GamePlay::Start() 
 {
-    
+    backgroud_music.play();
 }

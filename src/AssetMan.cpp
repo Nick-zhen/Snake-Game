@@ -25,6 +25,14 @@ void Engine::AssetMan::AddFont(int id, const std::string& filePath) {
     }
 }
 
+// void  Engine::AssetMan::AddMusic(int id, const std::string& filePath) {
+//     auto music = std::make_unique<sf::Music>();
+
+//     if (music->openFromFile(filePath)) {
+//         m_musics[id] = std::move(music);
+//     }
+// }
+
 // unique_ptr.get() return a pointer to the managed object which is reference, so we need to dereference it to get the object.
 const sf::Texture& Engine::AssetMan::GetTexture(int id) const {
     return *(m_textures.at(id).get());
@@ -33,3 +41,7 @@ const sf::Texture& Engine::AssetMan::GetTexture(int id) const {
 const sf::Font& Engine::AssetMan::GetFont(int id) const {
     return *(m_fonts.at(id).get());
 }
+
+// const sf::Music& Engine::AssetMan::GetMusic(int id) const {
+//     return *(m_musics.at(id).get());
+//  }
