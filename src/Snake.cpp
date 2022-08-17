@@ -27,12 +27,17 @@ void Snake::Move(const sf::Vector2f& direction) {
     }
 }
 
-void Snake::isOn(const sf::Sprite& other) const {
-    
+bool Snake::isOn(const sf::Sprite& other) const {
+    return other.getGlobalBounds().intersects(m_head->getGlobalBounds());
 }
 
 void Snake::Grow(const sf::Vector2f& direction) {
+    sf::Sprite newPiece;
+    newPiece.setTexture(*(m_body.begin()->getTexture()));
+    newPiece.setPosition(m_head->getPosition() + direction);
 
+    // insert will insert node before the m_head, and return the iterator of inserted data.
+    m_head = m_body.insert(++m_head, newPiece);
 }
 
 void Snake::draw(sf::RenderTarget &target, sf::RenderStates states) const {

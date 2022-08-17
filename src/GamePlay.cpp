@@ -2,11 +2,15 @@
 
 #include <SFML/Window/Event.hpp>
 
+#include <stdlib.h>
+#include <time.h>
+
 GamePlay::GamePlay(std::shared_ptr<Context>& context) 
     : m_context(context), 
     m_snakeDirection({32.f, 0}), 
     m_elapsedTime(sf::Time::Zero)
 {
+    srand(time(nullptr));
 }
 
 GamePlay::~GamePlay() 
@@ -53,22 +57,27 @@ void GamePlay::ProcessInput()
         if (event.type == sf::Event::Closed) {
             m_context->m_window->close();
         } else if (event.type == sf::Event::KeyPressed) {
+            sf::Vector2f newDirection = m_snakeDirection;
             switch (event.key.code) {
             case sf::Keyboard::Up:
-                m_snakeDirection = {0.f, -32.f};
+                newDirection = {0.f, -32.f};
                 break;
             case sf::Keyboard::Down:
-                m_snakeDirection = {0.f, 32.f};
+                newDirection = {0.f, 32.f};
                 break;
             case sf::Keyboard::Left:
-                m_snakeDirection = {-32.f, 0.f};
+                newDirection = {-32.f, 0.f};
                 break;
             case sf::Keyboard::Right:
-                m_snakeDirection = {32.f, 0.f};
+                newDirection = {32.f, 0.f};
                 break;
             default:
                 break;
             }
+            if (std::abs(m_snakeDirection.x) != std::abs(newDirection.x) || 
+                std::abs(m_snakeDirection.y) != std::abs(newDirection.y)) {
+                    m_snakeDirection = newDirection;
+                }
         }
     }
 }
@@ -77,7 +86,26 @@ void GamePlay::Update(sf::Time deltaTime)
 {
     m_elapsedTime += deltaTime;
     if (m_elapsedTime.asSeconds() > 0.1) {
-        m_snake.Move(m_snakeDirection);
+        
+        bool isOnWall = false;
+        for (auto& wall: m_walls) {
+            if (m_snake.isOn(wall)) {
+                // Tode: Go to Game over
+                break;
+            }
+        }
+
+        if (m_snake.isOn(m_food)) {
+            m_snake.Grow(m_snakeDirection);
+
+            int x = std::clamp<int>(rand() % m_context->m_window->getSize().x, 32, 600);
+            int y = std::clamp<int>(rand() % m_context->m_window->getSize().y, 32, 700);
+            m_food.setPosition(x, y);
+
+        } else {
+            m_snake.Move(m_snakeDirection);
+        }
+
         m_elapsedTime = sf::Time::Zero;
     }
 }

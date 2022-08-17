@@ -20,7 +20,7 @@ public:
 
     void Init(const sf::Texture& texture);
     void Move(const sf::Vector2f& direction);
-    void isOn(const sf::Sprite& other) const;
+    bool isOn(const sf::Sprite& other) const;
     void Grow(const sf::Vector2f& direction);
 
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
