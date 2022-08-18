@@ -40,6 +40,16 @@ void Snake::Grow(const sf::Vector2f& direction) {
     m_head = m_body.insert(++m_head, newPiece);
 }
 
+bool Snake::IsSelfIntersecting() const {
+
+    for (auto piece = m_body.begin(); piece != m_body.end(); ++piece) {
+        if (m_head != piece) {
+            if (isOn(*piece)) return true;
+        }
+    }
+    return false;
+}
+
 void Snake::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     for (auto& piece : m_body) {
         target.draw(piece);
