@@ -5,7 +5,7 @@
 #include "MainMenu.hpp"
 
 Game::Game() : m_context(std::make_shared<Context>()) {
-    m_context->m_window->create(sf::VideoMode(1000, 800), "Snake Game!", sf::Style::Close);
+    m_context->m_window->create(sf::VideoMode(1000, 800), "Snake Game", sf::Style::Close);
     m_context->m_states->Add(std::make_unique<MainMenu>(m_context));
 }
 

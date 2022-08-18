@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Wed Aug 17 00:08:12 2022
+# Make data base, printed on Wed Aug 17 15:53:02 2022
 
 # Variables
 
@@ -43,17 +42,19 @@ VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Apple/usr/bin
 # environment
+LaunchInstanceID = EE09B953-375B-4439-8ECC-A5241AD406E9
+# environment
 ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 7)
 LIB := lib
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.tc9IICBmj3/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.h7wJmo9oOP/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = /private/tmp/com.apple.launchd.uo8Q5YQh0w/org.macosforge.xquartz:0
+DISPLAY = /private/tmp/com.apple.launchd.mUNYiGlgBx/org.macosforge.xquartz:0
 # environment
 PWD = /Users/nickzheng/github/snakeGame
 # environment
@@ -134,6 +135,8 @@ CXX := clang++
 LC_ALL = C
 # makefile (from `Makefile', line 9)
 LIBRARIES := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+# environment
+SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -142,13 +145,12 @@ SUFFIXES :=
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
- 
 # environment
 LANG = C
 # environment
-VSCODE_PID = 51519
+VSCODE_PID = 422
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=2/96=2%
+# Load=69/1024=7%, Rehash=0, Collisions=2/98=2%
 
 # Pattern-specific Variable Values
 
@@ -156,10 +158,10 @@ VSCODE_PID = 51519
 
 # Directories
 
-# . (device 16777223, inode 40518486): 11 files, no impossibilities.
+# . (device 16777223, inode 40518486): 12 files, no impossibilities.
 # src (device 16777223, inode 40533529): 10 files, no impossibilities.
 
-# 21 files, no impossibilities in 2 directories.
+# 22 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -188,7 +190,7 @@ src/StateMan.cpp:
 # Not a target:
 src/GamePlay.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-17 00:06:39
+#  Last modified 2022-08-17 00:35:20
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -221,7 +223,7 @@ src/Game.cpp:
 # Not a target:
 src/GameOver.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 23:12:19
+#  Last modified 2022-08-17 00:34:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -238,7 +240,6 @@ src/MainMenu.cpp:
 
 # Not a target:
 .DEFAULT:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -270,7 +271,7 @@ src/main.cpp:
 
 bin/main: src/AssetMan.cpp src/Game.cpp src/GameOver.cpp src/GamePlay.cpp src/MainMenu.cpp src/Snake.cpp src/StateMan.cpp src/main.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-17 00:07:47
+#  Last modified 2022-08-17 00:35:51
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -310,6 +311,6 @@ src/Snake.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Aug 17 00:08:12 2022
+# Finished Make data base on Wed Aug 17 15:53:02 2022
 
  

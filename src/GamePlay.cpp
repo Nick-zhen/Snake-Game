@@ -1,5 +1,6 @@
 #include "GamePlay.hpp"
 #include "GameOver.hpp"
+#include "PauseGame.hpp"
 
 #include <SFML/Window/Event.hpp>
 
@@ -10,7 +11,8 @@
 GamePlay::GamePlay(std::shared_ptr<Context>& context) 
     : m_context(context), 
     m_snakeDirection({32.f, 0}), 
-    m_elapsedTime(sf::Time::Zero)
+    m_elapsedTime(sf::Time::Zero),
+    m_score(0)
 {
     srand(time(nullptr));
 }
@@ -57,6 +59,10 @@ void GamePlay::Init()
 
     // set snake    
     m_snake.Init(m_context->m_assets->GetTexture(SNAKE));
+
+    // set score title
+    m_scoreText.setFont(m_context->m_assets->GetFont(MAIN_FONT));
+    m_scoreText.setString("Score: " + std::to_string(m_score));
 }
 
 void GamePlay::ProcessInput() 
@@ -80,6 +86,10 @@ void GamePlay::ProcessInput()
             case sf::Keyboard::Right:
                 newDirection = {32.f, 0.f};
                 break;
+            case sf::Keyboard::Space:
+                // Pause
+                m_context->m_states->Add(std::make_unique<PauseGame>(m_context));
+                break;
             default:
                 break;
             }
@@ -95,8 +105,7 @@ void GamePlay::Update(sf::Time deltaTime)
 {
     m_elapsedTime += deltaTime;
     if (m_elapsedTime.asSeconds() > 0.1) {
-        
-        bool isOnWall = false;
+
         for (auto& wall: m_walls) {
             if (m_snake.isOn(wall)) {
                 // Go to Game over
@@ -109,10 +118,13 @@ void GamePlay::Update(sf::Time deltaTime)
 
         if (m_snake.isOn(m_food)) {
             m_snake.Grow(m_snakeDirection);
-
+            
             int x = std::clamp<int>(rand() % m_context->m_window->getSize().x, 32, 600);
             int y = std::clamp<int>(rand() % m_context->m_window->getSize().y, 32, 700);
             m_food.setPosition(x, y);
+
+            m_score++;
+            m_scoreText.setString("Score: " + std::to_string(m_score));
 
         } else {
             m_snake.Move(m_snakeDirection);
@@ -131,13 +143,14 @@ void GamePlay::Draw()
     }
     m_context->m_window->draw(m_food);
     m_context->m_window->draw(m_snake);
+    m_context->m_window->draw(m_scoreText);
 
     m_context->m_window->display();
 }
 
 void GamePlay::Pause() 
 {
-
+    backgroud_music.pause();
 }
 
 void GamePlay::Start() 

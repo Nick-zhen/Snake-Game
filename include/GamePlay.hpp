@@ -4,7 +4,9 @@
 #include <array>
 
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Text.hpp>
 #include <SFML/Audio.hpp>
+
 
 #include "Game.hpp"
 #include "State.hpp"
@@ -21,6 +23,9 @@ private:
     sf::Sprite m_food;
     std::array<sf::Sprite, 4> m_walls;
     Snake m_snake;
+
+    sf::Text m_scoreText;
+    int m_score;
 
     sf::Vector2f m_snakeDirection;
     sf::Time m_elapsedTime;
