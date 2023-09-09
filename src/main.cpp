@@ -4,7 +4,7 @@ int main()
 {
     // implement in stack
     Game game;
-    game.run();
+    game.Run();
     // implement in heap;
     // keyword new will return a pointer
     // Game* game = new Game();
